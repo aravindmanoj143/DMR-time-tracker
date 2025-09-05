@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+<ion-buttons slot="start">
+  <ion-back-button defaultHref="/home"></ion-back-button>
+</ion-buttons>
+
+    <ion-title>Leave</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding leave-application-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Leave Application</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form #ondutyForm="ngForm">
+    <!-- Employee Code -->
+    <ion-item>
+      <ion-label position="stacked">Employee Code</ion-label>
+      <ion-input
+        [(ngModel)]="formData.name"
+        name="name"
+        placeholder="EGR998"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- Employee Name -->
+    <ion-item>
+      <ion-label position="stacked">Employee Name</ion-label>
+      <ion-input
+        [(ngModel)]="formData.nameSecond"
+        name="nameSecond"
+        placeholder="ARAVIND G"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- From Date -->
+    <ion-item lines="none">
+      <ion-label position="stacked">From Date</ion-label>
+      <ion-datetime-button datetime="fromDate"></ion-datetime-button>
+      <ion-modal keepContentsMounted="true">
+        <ng-template>
+          <ion-datetime
+            id="fromDate"
+            presentation="date"
+            [(ngModel)]="formData.fromDate"
+            name="fromDate">
+          </ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <!-- To Date -->
+    <ion-item lines="none">
+      <ion-label position="stacked">To Date</ion-label>
+      <ion-datetime-button datetime="toDate"></ion-datetime-button>
+      <ion-modal keepContentsMounted="true">
+        <ng-template>
+          <ion-datetime
+            id="toDate"
+            presentation="date"
+            [(ngModel)]="formData.toDate"
+            name="toDate">
+          </ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <!-- Total Days -->
+    <ion-item>
+      <ion-label position="stacked">Total Days</ion-label>
+      <ion-input
+        [(ngModel)]="formData.totalDays"
+        name="totalDays"
+        type="number"
+        placeholder="e.g. 2"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- Reason -->
+    <ion-item>
+      <ion-label position="stacked">Reason</ion-label>
+      <ion-select
+        [(ngModel)]="formData.reason"
+        name="reason"
+        placeholder="Select Reason"
+        required>
+        <ion-select-option value="Exam">Exam</ion-select-option>
+        <ion-select-option value="Personal">Personal</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Approver Name -->
+    <ion-item>
+      <ion-label position="stacked">Approver Name</ion-label>
+      <ion-input
+        [(ngModel)]="formData.approverName"
+        name="approverName"
+        value="CHETTIAPPAN .V"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- Submit -->
+    <ion-button expand="block" class="submit-button">
+      Submit
+    </ion-button>
+  </form>
+</ion-content>

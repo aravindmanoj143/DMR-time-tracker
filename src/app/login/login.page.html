@@ -1,0 +1,115 @@
+<ion-content [fullscreen]="true" class="login-content">
+    <div class="center-wrapper">
+  <div class="login-container">
+    <!-- Background Elements -->
+    <div class="background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div> 
+      
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section" [@fadeInUp]>
+      <div class="logo-container">
+        <img 
+          src="assets/dinamalarlogo.png" 
+          alt="Company Logo" 
+          class="logo-image"
+          (error)="onLogoError($event)"
+        />
+        <ion-icon name="business-outline" class="fallback-logo" [class.hidden]="!logoError"></ion-icon>
+      </div>
+      <h1 class="welcome-title">Welcome Back</h1>
+      <p class="welcome-subtitle">Sign in to your account</p>
+    </div>
+
+    <!-- Login Form -->
+    <form class="login-form" (ngSubmit)="onLogin()" #loginForm="ngForm" [@slideInUp]>
+      <div class="form-container">
+        
+        <!-- Employee Code Input -->
+        <div class="input-group" [class.error]="empCodeError && empCode.touched">
+          <div class="input-wrapper">
+            <ion-icon name="person-outline" class="input-icon"></ion-icon>
+            <ion-input
+              #empCode="ngModel"
+              [(ngModel)]="credentials.empCode"
+              name="empCode"
+              type="text"
+              placeholder="Employee Code"
+              class="custom-input"
+              required
+              [class.filled]="credentials.empCode"
+              (ionBlur)="validateEmpCode()"
+            ></ion-input>
+          </div>
+          <div class="error-message" *ngIf="empCodeError && empCode.touched">
+            {{ empCodeError }}
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-group" [class.error]="passwordError && password.touched">
+          <div class="input-wrapper">
+            <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+            <ion-input
+              #password="ngModel"
+              [(ngModel)]="credentials.password"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="Password"
+              class="custom-input"
+              required
+              [class.filled]="credentials.password"
+              (ionBlur)="validatePassword()"
+            ></ion-input>
+            <ion-button 
+              fill="clear" 
+              class="password-toggle"
+              (click)="togglePasswordVisibility()"
+              type="button"
+            >
+              <ion-icon 
+                [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+                class="toggle-icon"
+              ></ion-icon>
+            </ion-button>
+          </div>
+          <div class="error-message" *ngIf="passwordError && password.touched">
+            {{ passwordError }}
+          </div>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="remember-section">
+          <ion-checkbox 
+            [(ngModel)]="rememberMe" 
+            name="rememberMe"
+            class="custom-checkbox"
+          ></ion-checkbox>
+          <label class="remember-label">Remember me</label>
+        </div>
+
+        <!-- Login Button -->
+        <ion-button 
+          expand="block" 
+          type="submit" 
+          class="login-button"
+          [disabled]="isLoading || !loginForm.valid"
+        >
+          <div class="button-content">
+            <ion-spinner name="crescent" *ngIf="isLoading" class="login-spinner"></ion-spinner>
+            <span *ngIf="!isLoading">Sign In</span>
+            <ion-icon name="arrow-forward-outline" *ngIf="!isLoading" class="button-icon"></ion-icon>
+          </div>
+        </ion-button>
+
+    
+      </div>
+    </form>
+  </div>
+
+  </div>
+</ion-content>

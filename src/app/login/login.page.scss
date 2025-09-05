@@ -1,0 +1,238 @@
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  background: linear-gradient(to bottom right, #fff, #f8f8f8);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+  text-align: center;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+
+  .shape-1 {
+    width: 200px;
+    height: 200px;
+    background: #b5aaff;
+    top: -50px;
+    left: -50px;
+  }
+
+  .shape-2 {
+    width: 150px;
+    height: 150px;
+    background: #3a3ab3;
+    bottom: 120px;
+    right: -30px;
+  }
+
+  .shape-3 {
+    width: 100px;
+    height: 100px;
+    background: #aab4f6;
+    bottom: 30px;
+    left: 20px;
+  }
+
+  .shape-4 {
+    width: 250px;
+    height: 250px;
+    background: #d4c7ff;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .shape-5 {
+    width: 200px;
+    height: 200px;
+    background: #d4c7ff;
+    bottom: -60px;
+    right: -40px;
+  }
+}
+
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -100px;
+
+  .logo-image {
+    
+    width: 160px;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .fallback-logo {
+    font-size: 48px;
+    color: #aaa;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .welcome-title {
+      
+    font-size: 22px;
+    font-weight: 600;
+    margin: 8px 0 4px;
+  }
+
+  .welcome-subtitle {
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+
+  &.error .custom-input {
+    border: 1px solid #f44336;
+  }
+
+  .error-message {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #999;
+  }
+
+  ion-input.custom-input {
+    width: 100%;
+    padding-left: 36px;
+    height: 45px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .toggle-icon {
+      font-size: 18px;
+      padding: 8px;
+      color: #333;
+    }
+  }
+}
+
+.remember-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .remember-label {
+    font-size: 14px;
+    margin-left: 8px;
+    color: #333;
+  }
+}
+
+.login-button {
+  --background: #3a3ab3;
+  --border-radius: 10px;
+  height: 45px;
+  font-weight: 600;
+  font-size: 16px;
+
+  .button-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    .button-icon {
+      font-size: 16px;
+    }
+
+    .login-spinner {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+
+  .forgot-link {
+    font-size: 13px;
+    color: #3a3ab3;
+    text-transform: none;
+  }
+}
+
+.login-footer {
+  margin-top: 24px;
+  text-align: center;
+
+  .footer-text {
+    font-size: 14px;
+    color: #555;
+  }
+}
+ion-input.custom-input ::ng-deep input {
+  padding-left: 8px;
+}

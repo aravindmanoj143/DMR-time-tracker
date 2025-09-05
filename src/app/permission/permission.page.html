@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+<ion-buttons slot="start">
+  <ion-back-button defaultHref="/home"></ion-back-button>
+</ion-buttons>
+
+    <ion-title>Permission</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding permission-form-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Permission Request</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form #onduttyForm="ngForm">
+
+    <!-- Employee Code -->
+    <ion-item>
+      <ion-label position="stacked">Employee Code</ion-label>
+      <ion-input 
+        [(ngModel)]="formData.name" 
+        name="name" 
+        placeholder="EGR998" 
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- Name -->
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input 
+        [(ngModel)]="formData.nameSecond" 
+        name="nameSecond" 
+        placeholder="ARAVIND G" 
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- Date -->
+    <ion-item>
+      <ion-label position="stacked">Date</ion-label>
+      <ion-datetime-button datetime="permDate"></ion-datetime-button>
+      <ion-modal keepContentsMounted="true">
+        <ng-template>
+          <ion-datetime
+            id="permDate"
+            presentation="date"
+            [(ngModel)]="formData.date"
+            name="date">
+          </ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <!-- Start Time -->
+    <ion-item lines="none">
+      <ion-label position="stacked">Start Time</ion-label>
+      <ion-datetime-button datetime="startTime"></ion-datetime-button>
+      <ion-modal keepContentsMounted="true">
+        <ng-template>
+          <ion-datetime
+            id="startTime"
+            presentation="time"
+            [(ngModel)]="formData.startTime"
+            name="startTime">
+          </ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <!-- End Time -->
+    <ion-item lines="none">
+      <ion-label position="stacked">End Time</ion-label>
+      <ion-datetime-button datetime="endTime"></ion-datetime-button>
+      <ion-modal keepContentsMounted="true">
+        <ng-template>
+          <ion-datetime
+            id="endTime"
+            presentation="time"
+            [(ngModel)]="formData.endTime"
+            name="endTime">
+          </ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <!-- Night Duty -->
+    <ion-item>
+      <ion-label position="stacked">Night Duty</ion-label>
+      <ion-radio-group [(ngModel)]="formData.nightDuty" name="nightDuty">
+        <ion-item lines="none">
+          <ion-label>Yes</ion-label>
+          <ion-radio slot="start" value="yes"></ion-radio>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" value="no"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+
+    <!-- Reason -->
+    <ion-item>
+      <ion-label position="stacked">Reason</ion-label>
+      <ion-textarea 
+        [(ngModel)]="formData.purposeToVisit" 
+        name="purposeToVisit"
+        rows="3">
+      </ion-textarea>
+    </ion-item>
+
+    <!-- Approver Name -->
+    <ion-item>
+      <ion-label position="stacked">Approver Name</ion-label>
+      <ion-input 
+        [(ngModel)]="formData.approverName" 
+        name="approverName"
+        value="CHETTIAPPAN .V">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="submit-button">Submit</ion-button>
+  </form>
+</ion-content>

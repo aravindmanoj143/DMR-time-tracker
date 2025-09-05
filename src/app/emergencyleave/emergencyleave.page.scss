@@ -1,0 +1,33 @@
+.leave-content {
+  form {
+    ion-item {
+      --inner-padding-end: 0;
+      --inner-padding-start: 0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      background: #f9f9f9;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    ion-label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    ion-input,
+    ion-select {
+      padding: 8px 0;
+    }
+
+    ion-datetime-button {
+      margin-top: 8px;
+    }
+
+    .submit-button {
+      margin-top: 24px;
+      --background: #a7a2eb;
+      font-weight: bold;
+      border-radius: 12px;
+    }
+  }
+}

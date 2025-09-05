@@ -1,0 +1,86 @@
+.onduty-form-content {
+  form {
+    ion-item {
+      --inner-padding-end: 0;
+      --inner-padding-start: 0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      background: #f9f9f9;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    ion-label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    ion-input,
+    ion-select,
+    ion-textarea {
+      padding: 8px 0;
+    }
+
+    .submit-button {
+      margin-top: 24px;
+      --background: #3a3ab3;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+  }
+}
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+
+  .shape-1 {
+    width: 200px;
+    height: 200px;
+    background: #b5aaff;
+    top: -50px;
+    left: -50px;
+  }
+
+  .shape-2 {
+    width: 150px;
+    height: 150px;
+    background: #3a3ab3;
+    bottom: 120px;
+    right: -30px;
+  }
+
+  .shape-3 {
+    width: 100px;
+    height: 100px;
+    background: #aab4f6;
+    bottom: 30px;
+    left: 20px;
+  }
+
+  .shape-4 {
+    width: 250px;
+    height: 250px;
+    background: #d4c7ff;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .shape-5 {
+    width: 200px;
+    height: 200px;
+    background: #d4c7ff;
+    bottom: -60px;
+    right: -40px;
+  }
+}

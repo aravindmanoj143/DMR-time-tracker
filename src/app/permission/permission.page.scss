@@ -1,0 +1,29 @@
+.permission-form-content {
+  form {
+    ion-item {
+      --inner-padding-end: 0;
+      --inner-padding-start: 0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      background: #f9f9f9;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    ion-label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    ion-input,
+    ion-textarea {
+      padding: 8px 0;
+    }
+
+    .submit-button {
+      margin-top: 24px;
+      --background: #3a3ab3;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+  }
+}

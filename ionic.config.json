@@ -1,0 +1,8 @@
+{
+  "name": "DMR TimeTag",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "6d254fb2"
+}
